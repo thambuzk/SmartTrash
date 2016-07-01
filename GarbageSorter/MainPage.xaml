@@ -1,0 +1,36 @@
+﻿<Page
+    x:Class="GarbageSorter.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:GarbageSorter"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.ColumnDefinitions>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height=".2*" />
+            <RowDefinition Height=".1*" />
+            <RowDefinition Height=".6*" />
+            <RowDefinition Height=".1*" /> 
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Row="0" Text="Garbage Sorter" HorizontalAlignment="Center" FontSize="72" FontWeight="ExtraBold"/>
+        <TextBlock Grid.Row="1" Text="Scan the garbage you would like to sort today." HorizontalAlignment="Center" FontSize="36" FontWeight="ExtraBold"/>
+        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center">
+            <Canvas Name="PreviewCanvas" Grid.Row="2" Grid.Column="0" Width="200" Height="200" Background="Gray"  Margin="0,0,0,0" Visibility="Visible">
+                <CaptureElement x:Name="previewElement" Width="200" Height="200" HorizontalAlignment="Left" Visibility="Visible"/>
+            </Canvas>
+            <Button x:Name="takePhoto" Content="Sort Me" Click="takePhoto_Click" Margin="10,0,10,0" Width="120" IsEnabled="True"/>
+            <Canvas Name="PhotoCanvas" Grid.Row="2" Grid.Column="1" Width="200" Height="200" Background="Gray"  Margin="0,0,0,0" Visibility="Visible">
+                <Image x:Name="captureImage" Width="200" Height="200" Visibility="Visible"/>
+            </Canvas>
+        </StackPanel>
+        <ScrollViewer Grid.Row="5" Margin="12,10,12,0" HorizontalAlignment="Center" VerticalAlignment="Center" >
+            <TextBox
+				x:Name="status" TextWrapping="Wrap" IsReadOnly="True" Height="60" Width="400" HorizontalAlignment="Left" VerticalAlignment="Top" 
+				ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Auto"/>
+        </ScrollViewer>
+    </Grid>
+</Page>
