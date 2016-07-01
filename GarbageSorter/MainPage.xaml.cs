@@ -65,7 +65,7 @@ namespace GarbageSorter
             try
             {
                 takePhoto.IsEnabled = false;
-                //var testphoto = await StorageFile.GetFileFromPathAsync(@"C:\Users\tkamal\Pictures\photo1.jpg");
+                //var testphoto1 = await StorageFile.GetFileFromPathAsync(@"C:\Users\tkamal\Pictures\photo1.jpg");
 
                 photoFile = await KnownFolders.PicturesLibrary.CreateFileAsync(
                     PHOTO_FILE_NAME, CreationCollisionOption.ReplaceExisting);
